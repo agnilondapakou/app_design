@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -41,36 +39,29 @@ class _MainPageState extends State<MainPage> {
           child: Text('Drawer'),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Color.fromARGB(255, 231, 231, 231),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.home_outlined),
-                color: Color.fromARGB(255, 121, 121, 121),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.shopping_cart_outlined),
-                color: Color.fromARGB(255, 121, 121, 121),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.download_for_offline_outlined),
-                color: Color.fromARGB(255, 121, 121, 121),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.person_outline),
-                color: Color.fromARGB(255, 121, 121, 121),
-                onPressed: () {},
-              ),
-            ],
+      bottomNavigationBar: BottomNavigationBar(
+        // ignore: prefer_const_literals_to_create_immutables
+
+        items: [
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
-        ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.favorite),
       ),
       body: Column(
         children: [
